@@ -1,0 +1,8 @@
+@startuml simple class example
+class Example{
+    foo: String
+    bar: int
+}
+
+example : baz(): boolean
+@enduml

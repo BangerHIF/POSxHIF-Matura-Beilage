@@ -1,0 +1,31 @@
+= UML
+
+Mit Hilfe von UML können Klassendiagramm der Domain Klassen Dargestellt werden
+
+== Beispiel einer UML Klasse
+
+[plantuml]
+----
+include::UML/SimpleClassExample.puml[]
+----
+
+In diesem Diagramm sieht man eine Klasse mit einer Variable foo vom Datentypen String, einer Variable bar vom Datentypen bar und eine Methode baz() die einen boolean zurück gibt.
+
+== Beziehungen zwischen Klassen
+
+[plantuml]
+----
+include::UML/RelationshipExample.puml[]
+----
+
+Die Beziehungen in diesem Diagramm können in drei Arten unterteilt werden:
+
+=== Extension
+
+Eine Extension relationship gibt an, dass eine Klasse von einer anderen erbt. In diesem Beispiel erbt Class1 von Class2 und erhält damit alle Attribute von Class2.
+
+=== Composition
+
+
+
+=== Aggregation

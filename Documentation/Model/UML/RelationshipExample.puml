@@ -1,0 +1,17 @@
+@startuml relationship example
+class Class1{}
+
+class Class2{}
+
+class Class3{}
+
+class Class4{}
+
+class Class5{}
+
+class Class6{}
+
+Class1 <|-- Class2
+Class3 "1" *-- "n" Class4
+Class5 "1" o-- "n" Class6
+@enduml
