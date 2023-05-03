@@ -24,8 +24,10 @@ Die Beziehungen in diesem Diagramm können in drei Arten unterteilt werden:
 
 Eine Extension relationship gibt an, dass eine Klasse von einer anderen erbt. In diesem Beispiel erbt Class1 von Class2 und erhält damit alle Attribute von Class2.
 
+=== Aggregation
+
+Eine Aggregation relationship gibt an, dass ein Child *alleine* ohne seinen Parent existieren kann. In diesem Fall kann Class4 auch ohne Class3 existieren, das heißt, dass wenn ein Objekt von Class4 gelöscht wird, das Objekt von Class3 weiter existieren. In dem Diagramm ist dann noch zusätzlich angegeben, dass Class3 mehrere Instanzen von Class4, aber Class4 nur eine Instanz von Class3 haben kann.
+
 === Composition
 
-
-
-=== Aggregation
+Eine Composition relationship gibt an, dass ein Child *nicht alleine* ohne seinen Parent existieren kann. In diesem Fall kann Class6 nicht ohne Class5 existieren, das heißt, dass wenn ein Objekt von Class5 gelöscht wird auch automatisch die mit ihm assoziierten Objekten von Class6 gelöscht werden. In dem Diagramm ist dann noch zusätzlich angegeben, dass Class5 mehrere Instanzen von Class6, aber Class6 nur eine Instanz von Class5 haben kann.
