@@ -8,6 +8,8 @@ include::General/cover.adoc[]
 //  Mathematical Equasions
 :stem: 
 
+include::General/DesignPatterns/designPattern.adoc[]
+
 include::General/preface.adoc[]
 
 // including all member contents 
