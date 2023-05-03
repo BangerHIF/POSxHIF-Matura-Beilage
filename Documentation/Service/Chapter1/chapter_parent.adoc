@@ -2,8 +2,27 @@
 
 - dto
 
-data transfer object
+*Data transfer object*
 used to transfer data between layers in your program
+
+Sollte als record umgesetzt sein und einen großteil der originaldaten des models enthalten.
+*KEINE* 1 zu 1 abbildung des models!
+
+> Anderer Aufbau = WICHTIG und RICHTIG :D
+
+```java
+public record TeamDto(String name, String description, LocalDate creationDate, List<Member> memberList) {
+    public TeamDto(Team team){
+        this(team.getName(),team.getDescription(),team.getCreationDate(),team.getMembers());
+        log.debug("TeamDto from Team : {} has been built !", team);
+    }
+}
+```
 
 - mutateCommand
 
+Wird verwendet um die Daten vom Client zu erhalten und im Service in ein dto umzuwandeln.
+Form bzw Platzhalter für die Daten die zukünftig in das Model kommen sollen.
+
+**Path :**
+Client -> Controller -> Service
