@@ -22,6 +22,9 @@ include::Model/intro.adoc[]
 
 include::Persistence/intro.adoc[]
 
+include::Persistence/repository.adoc[]
+
+
 include::Presentation/intro.adoc[]
 
 include::Service/intro.adoc[]
