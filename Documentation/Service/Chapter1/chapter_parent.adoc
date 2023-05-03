@@ -1,5 +1,7 @@
 ## Service
 
+Der Service Layer dient zum Managen der Business Logik, die in den Controllern nicht abgebildet werden kann. Kompliziertere Prozesse und Abläufe werden hier abgebildet bzw. berücksichtigt.
+
 - dto
 
 *Data transfer object*
