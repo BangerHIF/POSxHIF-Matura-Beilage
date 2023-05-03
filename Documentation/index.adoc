@@ -12,13 +12,13 @@ include::General/preface.adoc[]
 
 // including all member contents 
 <<<
-include::ProjectLeader/intro.adoc[]
+include::Model/intro.adoc[]
 
-include::ProjectMember1/intro.adoc[]
+include::Persistence/intro.adoc[]
 
-include::ProjectMember2/intro.adoc[]
+include::Presentation/intro.adoc[]
 
-include::ProjectMember3/intro.adoc[]
+include::Service/intro.adoc[]
 
 <<<
 include::General/abstract.adoc[]
