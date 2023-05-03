@@ -1,3 +1,23 @@
-== Preface 
+== Ihr Auftrag! 
 
-This is the preface.
+==== Sehr geehrte Damen und Herren,
+
+Dieses Dokument dient als Beilage zur Schriftlichen Matura der HTL Spengergasse für das Jahr 2023.
+Es wurde im Sinne der Vorbereitung für die schriftliche Reifeprüfung von Mitgliedern der 5BHIF erstellt, und dient Ihnen als Hilfestellung für den Antritt.
+
+**Ihre Mission startet JETZT!**
+
+----
+
+Viel Erfolg bei der Matura!
+
+*(Das folgende Gerät wird in kürze selbstzerstört)*
+
+----
+
+MfG,
+*Boigner Thomas,*
+*Aslan Cemil,*
+*Cserich Philipp*
+
+image::/Assets/SecretImage.jpeg[align="center"]

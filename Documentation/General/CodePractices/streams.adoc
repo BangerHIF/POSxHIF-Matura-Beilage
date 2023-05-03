@@ -1,0 +1,47 @@
+# Stream types :
+
+- IntStream
+- Stream
+
+
+## IntStream
+
+- der IntStream ist ein Stream der zur Verarbeitung von Integer Werten dient
+dies kann zum Beispiel als ersatz für eine for Schleife dienen, wobei die Range der jeweiligen Werte durch folgende Syntax angegeben werden kann :
+
+```java
+IntStream.range(0, 10).forEach(System.out::println);
+```
+Dieser Stream gibt die Werte von 0 bis 9 aus. 
+Zur Verwendung des InstStreams für mappings anderer Objektklassen können unterschiedliche Methoden verwendet werden, wie zum Beispiel **mapToObj**. Dadurch kann der gestreamte wert innerhalb eines anderen Objektes verwendet bzw gespeichert werden oder eine methode wiederholt aufgerufen werden.
+
+## Stream
+
+Streams können bei jeder Liste verwendet werden, wobei die Liste durch die Methode **stream()** in einen Stream umgewandelt wird. Dieser wird daraufhin sequentiell durchlaufen und kann durch verschiedene Methoden manipuliert werden.
+
+- Filter
+
+```java
+
+int minGrade = 80;
+
+List<Student> filteredStudents = students.stream()
+        .filter(s -> s.getGrade() >= minGrade)
+        .toList();
+```
+
+- Collect
+
+```java	
+
+List<String> names = students.stream()
+        .filter(s -> s.getAge() > 18 && s.getState().equals("Bayern"))
+        .map(Student::getName)
+        .collect(Collectors.toList())
+```
+
+Collect is used to convert a stream into a collection. In this case, we are converting the stream into a new list.
+
+- Map
+
+Mapping a new value onto an existing instance 

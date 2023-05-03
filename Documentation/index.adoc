@@ -8,9 +8,13 @@ include::General/cover.adoc[]
 //  Mathematical Equasions
 :stem: 
 
-include::General/DesignPatterns/designPattern.adoc[]
-
 include::General/preface.adoc[]
+
+
+include::General/DesignPatterns/designPattern.adoc[leveloffset=+1]
+include::General/CodePractices/extensiveEnums.adoc[leveloffset=+1]
+include::General/CodePractices/streams.adoc[leveloffset=+1]
+
 
 // including all member contents 
 <<<

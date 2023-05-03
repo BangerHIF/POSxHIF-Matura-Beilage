@@ -1,0 +1,18 @@
+# Enums
+
+```java	
+
+public enum Test{
+    A(1),
+    B(2),
+    C(3)
+
+    Test(Integer i){
+        this.i = i;
+    }
+
+    private Integer i;
+}
+
+```
+While normal enums are mostly used to differentiate predetermined / static values, they can be extended by adding parameters through a constructor. 
