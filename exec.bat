@@ -1,1 +1,1 @@
-docker run --rm --name=diplomathesis --workdir="" -it -v %cd%/Documentation:/Documentation -v %cd%/Assets:/Assets asciidoctor/docker-asciidoctor asciidoctor-pdf --theme /Assets/theme.yml -a pdf-fontsdir=/Assets/Fonts /Documentation/index.adoc
+docker run --rm --name=diplomathesis --workdir="" -it -v %cd%/Documentation:/Documentation -v %cd%/Assets:/Assets asciidoctor/docker-asciidoctor asciidoctor-pdf --theme /Assets/theme.yml -a pdf-fontsdir=/Assets/Fonts -r asciidoctor-diagram /Documentation/index.adoc

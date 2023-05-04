@@ -2,6 +2,9 @@ include::General/cover.adoc[]
 :doctype: book 
 :preface-title: Preface 
 :toc: center
+:source-highlighter: pygments
+:source-linenums-option: true
+:asciidoctor-diagram: 
 
 
 //Activating some features

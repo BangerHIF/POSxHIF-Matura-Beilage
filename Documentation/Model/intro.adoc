@@ -1,3 +1,4 @@
 <<<
-include::Chapter1/chapter_parent.adoc[]
+include::restful.adoc[]
+include::uml.adoc[]
 <<<

@@ -15,4 +15,5 @@ public enum Test{
 }
 
 ```
-While normal enums are mostly used to differentiate predetermined / static values, they can be extended by adding parameters through a constructor. 
+Während normale Enums meist zur Unterscheidung von vorgegebenen/statischen Werten verwendet werden, können sie
+durch Hinzufügen von Parametern über einen Konstruktor erweitert werden.

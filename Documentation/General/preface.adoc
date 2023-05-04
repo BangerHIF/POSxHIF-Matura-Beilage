@@ -1,5 +1,7 @@
 == Ihr Auftrag! 
 
+image::/Assets/Attention.jpg[Attention,align="center",width="20%"]
+
 ==== Sehr geehrte Damen und Herren,
 
 Dieses Dokument dient als Beilage zur Schriftlichen Matura der HTL Spengergasse für das Jahr 2023.
@@ -7,17 +9,14 @@ Es wurde im Sinne der Vorbereitung für die schriftliche Reifeprüfung von Mitgl
 
 **Ihre Mission startet JETZT!**
 
-----
 
 Viel Erfolg bei der Matura!
 
-*(Das folgende Gerät wird in kürze selbstzerstört)*
-
-----
+_(Das folgende Gerät wird in kürze selbstzerstört)_
 
 MfG,
 *Aslan Cemil,*
 *Boigner Thomas,*
 *Cserich Philipp*
 
-image::/Assets/SecretImage.jpeg[align="center"]
+image::/Assets/SecretImage.jpeg[align="center",margin-top="10%"]
