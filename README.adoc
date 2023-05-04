@@ -1,4 +1,4 @@
-# 🕮 DiplomaThesis  
+# 🕮 POSxHIF-Matura-Beilage
 By @PHCaesar
 
 image::https://img.shields.io/badge/docs-passing-brightgreen[]
