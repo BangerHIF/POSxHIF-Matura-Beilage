@@ -2,7 +2,7 @@
 
 Der Service Layer dient zum Managen der Business Logik, die in den Controllern nicht abgebildet werden kann. Kompliziertere Prozesse und Abläufe werden hier abgebildet bzw. berücksichtigt.
 
-- dto
+#### Dto
 
 *Data transfer object*
 used to transfer data between layers in your program
@@ -21,10 +21,11 @@ public record TeamDto(String name, String description, LocalDate creationDate, L
 }
 ```
 
-- mutateCommand
+#### MutateCommand
 
 Wird verwendet um die Daten vom Client zu erhalten und im Service in ein dto umzuwandeln.
 Form bzw Platzhalter für die Daten die zukünftig in das Model kommen sollen.
 
 **Path :**
 Client -> Controller -> Service
+
