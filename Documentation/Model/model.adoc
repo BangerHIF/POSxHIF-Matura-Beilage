@@ -1,0 +1,32 @@
+= Model
+
+== Entities
+
+Entities können in einer Datenbank gespeichert werde und sind durch eine ID eindeutig gekennzeichnet.
+
+@Entity: Diese Annotation makiert eine Klasse als Entity, damit JPA sie als solche erkennt. +
+@Table: Diese Annotation macht es möglich Attribute, wie den Namen oder das Schema der zu der Entity erstellten Datenbank Tabelle zu ändern. +
+@Id: Diese Annotation makiert die Variable als einzigartige Id der Entity und als Primary Key der erstellten Tabelle. +
+@Column: Diese Annotation macht es möglich Attribute, wie den Namen, die Länge, nullable- und unique constraints, der zu der Variable erstellten Datenbank column zu ändern. +
+@Transient: Variablen mit dieser Annotation werden nicht in der Datenbank gespeichert. +
+
+
+=== AbstractPersistable
+
+Abstract Persistable ist eine Basis Klasse für Entities, die direkt eine Id implementiert.
+
+=== Relationships
+
+*1 zu 1* +
+Können über die @OneToOne Annotation angegeben werden. Auf einer Seite können wir nun mit @JoinColumn einen Foreign Key Column erstellen und auf der anderen mit mappedBy auf diese referenzieren. Außerdem kann mit dem cascade Parameter von @OneToOne das cascading angegeben werden.
+
+*1 zu n* +
+Können mit @OneToMany auf der Seite die mehrere Referenzen und @ManyToOne auf der Seite die eine Referenz hat angegeben werden. Die Seite mit mehreren Referenzen muss diese zwingend in einer Collection speicher. Auf einer Seite können wir nun mit @JoinColumn einen Foreign Key Column erstellen und auf der anderen mit mappedBy auf diese referenzieren. Außerdem kann mit dem cascade Parameter von @OneToOne das cascading angegeben werden.
+
+== Value Objects
+
+Value Objects können mit der @Embaddable annotation annotiert werden. Sie können dann mit @Embedded zu einer Entity hinzugefügt werden. Im Vergleich zu Entities haben Value Objects keine Id und es wird für sie keine extra Tabelle in der Datenbank erstellt. Die Werte der Value Objects werden einfach zu der Tabelle der Entitäten hinzugefügt die auf sie referenzieren. 
+
+== Enums
+
+Um einen Enum Wert in einer Entity zu speichern wird die @Enumerated Annotation verwedent. Zusätzlich kann mit dieser Annotation noch angegeben werden welchen EnumType das Enum hat.

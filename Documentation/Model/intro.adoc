@@ -1,4 +1,9 @@
+= Domain Model
+
 <<<
-include::restful.adoc[]
-include::uml.adoc[]
+include::uml.adoc[leveloffset=+1]
+<<<
+include::model.adoc[leveloffset=+1]
+<<<
+include::restful.adoc[leveloffset=+1]
 <<<
