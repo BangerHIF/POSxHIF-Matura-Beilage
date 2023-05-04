@@ -1,1 +1,90 @@
-# smth
+# Design Patterns
+
+## Creational Patterns
+
+### Singleton
+
+Verwendung einer einzigen zentralen Instanz einer Klasse, um mehrere Replikate desselben Objekts zu vermeiden.
+
+### Factory
+
+A factory is a class that creates objects. It can be used to create objects of a specific type, or to create objects of a specific type depending on the input parameters.
+
+### Abstract Factory
+
+Eine Abstract Factory ist eine Factory, die andere Factories erzeugt. Sie kann verwendet werden, um Factories eines bestimmten Typs zu erstellen oder um Factories eines bestimmten Typs in Abhängigkeit von den Eingabeparametern zu erstellen.
+
+### Builder
+
+Das Builder-Muster wird verwendet, um komplexe Objekte mit vielen Parametern zu erstellen. Es wird verwendet, um einen Konstruktor mit vielen Parametern zu vermeiden, der schwer zu lesen und nutzen ist, weshalb Parameter nach belieben weggelassen werden können, wenn man den Builder anstatt eines konstruktors nutzt. (Man erspart sich 50 unterschiedliche konstruktoren für jedes Instanzierungsszenario zu modellieren)
+
+In Java wird das Builder-Muster durch eine einfache Annotation implementiert, die oben auf die Klasse geschrieben werden kann. Die Annotation heißt @Builder und ist Teil der Lombok-library.
+
+### Dependency Injection
+
+Dependency Injection ist ein Entwurfsmuster, das zur Entkopplung von Komponenten in einer Softwareanwendung verwendet wird. Es ist ein Konzept, bei dem eine Klasse ihre Abhängigkeiten nicht selbst instanziert, sondern sie von einer externen Quelle erhält, z.B. durch Übergabe von Objekten als Parameter oder durch Aufruf von Methoden auf einem Injektions-Framework.
+
+Der java equivalent nutzt die @Autowired annotation von SpringBoot.
+
+### Prototype
+Das Entwurfsmuster Prototype ist ein Erstellungsmuster, mit dem Sie neue Objekte durch Kopieren oder Klonen bestehender Objekte erstellen können, anstatt sie von Grund auf neu zu erstellen.
+
+Die Hauptidee hinter dem Prototype-Muster besteht darin, den Prozess der Objekterstellung zu abstrahieren und eine Möglichkeit zu bieten, neue Objekte durch Kopieren oder Klonen bestehender Objekte zu erstellen, anstatt sie von Grund auf neu zu erstellen. Dies kann nützlich sein, wenn die Erstellung neuer Objekte teuer oder kompliziert ist und wenn Sie viele ähnliche Objekte erstellen müssen.
+
+Bei diesem Muster wird zunächst ein Prototyp-Objekt erstellt, das als Vorlage für alle neuen Objekte dient. Anschließend werden neue Objekte erstellt, indem der Prototyp kopiert und seine Eigenschaften nach Bedarf geändert werden. Dieser Prozess der Erstellung neuer Objekte aus einem Prototyp wird als Klonen bezeichnet.
+
+Es gibt zwei Möglichkeiten, das Prototypenmuster zu implementieren: Shallow copy und Deep copy.
+
+- Bei der shallow copy wird ein neues Objekt erstellt und alle Felder des ursprünglichen Objekts in das neue Objekt kopiert. Wenn jedoch einige der Felder Verweise auf andere Objekte sind, werden diese Verweise ebenfalls kopiert, was bedeutet, dass sowohl das ursprüngliche Objekt als auch das neue Objekt die gleichen Verweise auf die anderen Objekte haben werden. Dies kann zu unerwartetem Verhalten führen, wenn eines der gemeinsam genutzten Objekte geändert wird.
+
+- Bei der deep copy hingegen wird ein neues Objekt erstellt und alle Felder des ursprünglichen Objekts in das neue Objekt kopiert. Handelt es sich bei einem der Felder um einen Verweis auf ein anderes Objekt, werden auch diese Verweise kopiert, aber es werden auch neue Kopien der referenzierten Objekte erstellt. Auf diese Weise wird sichergestellt, dass das ursprüngliche Objekt und das neue Objekt über separate Kopien aller referenzierten Objekte verfügen.
+
+### Adapter
+
+Ein Designpattern namens "Adapter" ermöglicht die Zusammenarbeit von Objekten mit unterschiedlichen Schnittstellen. Es wird verwendet, um die Schnittstelle einer bestehenden Klasse in eine andere Schnittstelle zu ändern, die vom Kunden erwartet wird, ohne den ursprünglichen Code zu ändern.
+
+Wenn eine vorhandene Klasse über eine gewisse Funktionalität verfügt, aber eine andere Schnittstelle hat, als der Kunde erwartet, kann das Adaptermuster hilfreich sein. Die Erstellung einer neuen Klasse, die als Adapter zwischen dem Client und der alten Klasse dient, ist einer Änderung der bestehenden Klasse vorzuziehen, die sich gelegentlich als schwierig oder sogar unmöglich erweisen kann.
+
+Die Adapterklasse implementiert die Schnittstelle, die der Client erwartet, und enthält eine Instanz der bestehenden Klasse. Wenn der Client eine Methode des Adapters aufruft, übersetzt der Adapter die Anfrage in ein Format, das die bestehende Klasse verstehen kann, und delegiert die Anfrage an die bestehende Klasse. Die Antwort der existierenden Klasse wird dann wieder in ein Format übersetzt, das der Client verstehen kann und vom Adapter zurückgegeben.
+
+Es gibt zwei Arten von Adapter pattern:
+
+Class Adapter pattern: Dieses Muster nutzt die Vererbung, um die Schnittstelle einer Klasse an eine andere anzupassen. Die Adapterklasse erweitert die bestehende Klasse und implementiert die vom Client erwartete Schnittstelle. Dadurch kann der Adapter die Implementierung der bestehenden Klasse wiederverwenden, während er gleichzeitig die vom Client erwartete Schnittstelle bereitstellt.
+
+Object Adapter pattern: Dieses Muster verwendet Komposition, um die Schnittstelle einer Klasse an eine andere anzupassen. Die Adapterklasse enthält eine Instanz der bestehenden Klasse und implementiert die vom Client erwartete Schnittstelle. Wenn der Client eine Methode des Adapters aufruft, delegiert der Adapter die Anfrage an die bestehende Klasse.
+
+### Decorator
+
+Das Decorator pattern, erlaubt einem Objekt dynamisch neue funktionalitäten zuzuordnen ohne das andere Objekte der gleichen Klasse davon betroffen sind.
+Es ist sinnvoll einzusetzen um beispielsweise das Single Resopnsibility Principle einzuhalten, da dieses Pattern es erlaubt, die funktionalität einer Klasse in mehrere Klassen aufzuteilen.
+
+### Facade
+
+Eine Facade oder im deutschen auch Fassade ist ein Entwurfsmuster, welches eine 'front-facing' Schnittstelle im Programm darstellt, welche die eigentliche dahinterligende komplexität des Programs verstecken soll.
+
+### Strategy - Policy Pattern
+
+Das strategy oder Policy pattern, definiert eine "Strategy" welche während der Runtime verändert werden kann. Dadurch ist der Prozess nicht bereits zu 100% im sourcecode vordefiniert sonder verändert sich durch die Anforderungen im laufenden Programm.
+
+### Iterator
+
+Wird genutzt um einen container an elementen (List, Array usw.) durchzuiterieren und alle darin liegenden Elemente zu verarbeiten, verändern oder sonstiges.
+
+### Observer
+
+Das Observer pattern, ist ein Entwurfsmuster, welches es erlaubt, dass ein Objekt (Subject) eine Liste von anderen Objekten (Observers) verwaltet, welche bei einer Änderung des Subjects benachrichtigt werden.
+
+### Visitor
+
+Das Visitor pattern, ist ein Entwurfsmuster, welches es erlaubt, dass ein Objekt (Visitor) eine Liste von anderen Objekten (Elements) verwaltet, welche bei einer Änderung des Visitors benachrichtigt werden.
+(Umgekehrter Observer)
+
+### Software Principles
+
+#### Open Closed Principle (OCP)
+
+> "software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification"
+
+
+#### Single Responisbiltiy Principle
+> "A module should be responsible to one, and only one, actor."
