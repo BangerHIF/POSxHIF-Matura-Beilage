@@ -1,9 +1,8 @@
 = Domain Model
 
-<<<
+In diesem Kapitel schauen wir uns an wie ein Domain Model mittels UML dargestellt werden kann und wie es mittels JPA implementiert wird.
+
 include::uml.adoc[leveloffset=+1]
 <<<
 include::model.adoc[leveloffset=+1]
-<<<
-include::restful.adoc[leveloffset=+1]
 <<<

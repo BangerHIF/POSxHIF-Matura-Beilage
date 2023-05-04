@@ -25,8 +25,8 @@ Können mit @OneToMany auf der Seite die mehrere Referenzen und @ManyToOne auf d
 
 == Value Objects
 
-Value Objects können mit der @Embaddable annotation annotiert werden. Sie können dann mit @Embedded zu einer Entity hinzugefügt werden. Im Vergleich zu Entities haben Value Objects keine Id und es wird für sie keine extra Tabelle in der Datenbank erstellt. Die Werte der Value Objects werden einfach zu der Tabelle der Entitäten hinzugefügt die auf sie referenzieren. 
+Value Objects können mit der @Embaddable annotation annotiert werden. Sie können dann mit @Embedded zu einer Entity hinzugefügt werden. Im Vergleich zu Entities haben Value Objects keine Id und es wird für sie keine extra Tabelle in der Datenbank erstellt. Die Werte der Value Objects werden einfach zu der Tabelle der Entitäten hinzugefügt die auf sie referenzieren. Sollten Value Objects in einer Collection gespeichert werden muss die @ElementCollection Annotation verwendet werden.
 
 == Enums
 
-Um einen Enum Wert in einer Entity zu speichern wird die @Enumerated Annotation verwedent. Zusätzlich kann mit dieser Annotation noch angegeben werden welchen EnumType das Enum hat.
+Um einen Enum Wert in einer Entity zu speichern wird die @Enumerated Annotation verwedent. Zusätzlich kann mit dieser Annotation noch angegeben werden welchen EnumType das Enum hat. Sollten Enums in einer Collection gespeichert werden muss die @ElementCollection Annotation verwendet werden.
