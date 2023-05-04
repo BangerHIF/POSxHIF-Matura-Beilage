@@ -8,8 +8,7 @@ Beispiel:
 
 Wir haben eine Domain User mit den angebenen Attributen.
 
-[source,Java]
-----
+```java
 @Table(name="user-table")
 @Entity
 public class User extends AbstractPersistable<Long>
@@ -20,16 +19,15 @@ private String email;
 private LocalDate birthDate;
 private Boolean active;
 }
-----
+```
 
 Das Repository für User würde folgender Massen aussehen.
 
-[source,Java]
-----
+```java
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 }
-----
+```
 
 Die wichtigsten Bausteine für das Repository sind das ``@Repository ``und das `extends JpaRepositroy<User,Long>`.
 Als Parameter werden `JpaRepository<Domain-class, Datatype of ID>` übergeben. Dannach kann man beliebige Methoden für das Repository deklarieren.
@@ -68,8 +66,7 @@ Die JpaRepository-Class bietet uns folgende Methoden an
 #### Equality
 Equality kann auf mehreren Wegen geprüft werden:
 
-[source,Java]
-----
+```java
 List<User> findByName(String name); //wiedergibt User mit dem angebenen Namen
 
 List<User> findByNameIs(String name); // macht genau dasselbe was oben steht, ist lesbarer
@@ -77,49 +74,48 @@ List<User> findByNameIs(String name); // macht genau dasselbe was oben steht, is
 List<User> findByNameEquals(String name); // macht genau dasselbe was oben steht, ist lesbarer
 
 List<User> findbyNameIsNot(String name);
-----
+
+```
 
 Equality für booleans brauchen keine Parameter, wenn man sie wie gefolgt angibt:
-[source,Java]
-----
+
+```java
 List<User> findByActiveTrue();
 List<User> findByActiveFalse();
-----
+```
 
 #### Ähnlichkeit
-Ähnlichkeit-Funktione sind
+Ähnlichkeit-Funktionen sind
 
 * StartingWith(String prefix)
 * EndingWith(String prefix)
 * Containing(String prefix)
 * Like(String pattern)
 
-[source,Java]
-----
+
+```java
 List<User> findByNameStartingWith(String prefix); // User deren Name mit Prefix beginnet
 
 List<User> findByNameEndingWith(String suffix); // User deren Name mit Suffix endet
 
 List<User> findByNameContaining(String infix); // User deren Name Infix beinhaltet
-----
+```
 
 Es ist möglich mit einem bestimmten Namen-Pattern nach einem User zu queryn.
 
-[source,Java]
-----
+```java
 List<User> findByNameLike(String likePattern); // User deren Name in dem Pattern ist
-----
+```
 
-[source,Java]
-----
+
+```java
 String likePattern = "a%b%c";
 userRepository.findByNameLike(likePattern);
-----
+```
 
 #### Vergleich
 
-[source,Java]
-----
+```java
 List<User> findByAgeLessThan(int age); // wiedergibt User, die jünger als age sind
 
 List<User> findByAgeLessThanEquals(int age); // wiedergibt User, die jünger oder gleich alt wie age sind
@@ -127,29 +123,29 @@ List<User> findByAgeLessThanEquals(int age); // wiedergibt User, die jünger ode
 List<User> findByAgeGreaterThan(Integer age); // wiedergibt User, die älter als age sind
 
 List<User> findByAgeGreaterThanEqual(Integer age); // wiedergibt User, die älter oder gleich alt wie age sind
-----
+```
 Es ist auch möglich ein Altersbereich zu definieren
 
-[source,Java]
-----
+
+```java
 List<User> findByAgeBetween(Integer startAge, Integer endAge);
-----
+```
 
 Ebenso ist es möglich eine Collection von Alter zu definieren, womit man dann die User bekommt, deren Alter in der Collection enthalten ist
 
-[source,Java]
-----
+
+```java
 List<User> findByAgeIn(Collection<Integer> ages);
-----
+```
 
 Auch nach Datum kann gequeried werden:
 
-[source,Java]
-----
+
+```java
 List<User> findByBirthDateAfter(ZonedDateTime birthDate); // User, die nach birthDate auf die Welt gekommen sind
 
 List<User> findByBirthDateBefore(ZonedDateTime birthDate); // User, die vor birthDate auf die Welt gekommen sind
-----
+```
 
 #### Multiple Condition
 
@@ -157,37 +153,37 @@ Bei Multiple Condition sind die Keyword `And` und `Or` nötig
 
 Entweder wird User nach seinem Namen gesucht, oder nach seinem Geburtstag oder nach beiden:
 
-[source,Java]
-----
+
+```java
 List<User> findByNameOrBirthDate(String name, ZonedDateTime birthDate);
-----
+```
 
 Entweder wird der User nach seinem Namen oder nach seinem Geburtstag und Active, oder nach beiden gesucht:
 
-[source,Java]
-----
+
+```java
 List<User> findByNameOrBirthDateAndActive(String name, ZonedDateTime birthDate, Boolean active);
-----
+```
 
 #### Sortieren der Ergebnisse
 
 Um die Ergebnisse zu sortieren verwendet man OrderBy:
 
-[source,Java]
-----
+
+```java
 List<User> findByNameOrderByName(String name); // sortiert nach Namen
-----
+```
 
 `ASC` ist default eingestellt und steht für aufsteigend sortiert:
 
-[source,Java]
-----
+
+```java
 List<User> findByNameOrderByNameAsc(String name)
-----
+```
 
 `DESC` ist das Gegenteil von ASC und steht für absteigend sortieret:
 
-[source,Java]
-----
+
+```java
 List<User> findByNameOrderByNameDesc(String name);
-----
+```
