@@ -27,8 +27,7 @@ Rest-Request:
 
 Für die folgenden Erklärungen wird folgendes Entity verwendet:
 
-[source,Java]
-----
+```java
 @Table(name="user-table")
 @Entity
 public class User extends AbstractPersistable<Long>
@@ -39,7 +38,8 @@ private String email;
 private LocalDate birthDate;
 private Boolean active;
 }
-----
+
+```
 
 ## REST Controller in Spring Boot
 
@@ -67,8 +67,8 @@ Um Routes für unsere Backend-Applikation zu erstellen, bietet Spring Boot unter
 
 Für die folgenden Beispiele erstellen wir eine RestController-Class:
 
-[source,Java]
-----
+
+```java
 @RestController
 @RequestMapping("/api/user")
 public class UserRestController {
@@ -76,7 +76,7 @@ public class UserRestController {
     private final UserService userService;
 
 }
-----
+```
 
 Die Annotation `@RestController` definiert, dass UserRestController eine RestController-Class ist und `@RequestMapping` definiert die Route für den RestController
 
@@ -84,8 +84,8 @@ Die Annotation `@RestController` definiert, dass UserRestController eine RestCon
 
 Die folgende Methode ist eine Simple-Get-Methode, welche alle User, die in der Datenbank sind als ein JSON-List zurück gibt.
 
-[source,Java]
-----
+
+```java
     @GetMapping("")
     public HttpEntity<List<UserDto>> getAllUser()){
         List<UserDto> userList = userService.getAllUser();
@@ -93,12 +93,11 @@ Die folgende Methode ist eine Simple-Get-Methode, welche alle User, die in der D
                 ? ResponseEntity.noContent().build()
                 : ResponseEntity.ok(userList);
     }
-----
+```
 
 Ebenso ist es möglich über den RestController einen Datensatz zu bekommen. Dies kann man verwirklich in dem man die Annotation `@PathVariable` verwendet
 
-[source,Java]
-----
+```java
     @GetMapping("{id}")
     public HttpEntity<UserDto> getUserbyId(@PathVariable Long id)){
        UserDTO user = userService.getUserbyId(id);
@@ -106,12 +105,12 @@ Ebenso ist es möglich über den RestController einen Datensatz zu bekommen. Die
                 ? ResponseEntity.noContent().build()
                 : ResponseEntity.ok(user);
     }
-----
+```
 
 Durch ``@RequestParam`` können wir unsere GET-Methode verschärfern.
 Die folgende Methode hat den RequestParam includeResults, welches einen defaultValue no hat. Wenn value von includeResults yes ist, wiedergibt die Methode mehr infos über den User.
-[source,Java]
-----
+
+```java
 @GetMapping("/user/")
     public HttpEntity<List<UserDto>> getUserStatistics(@RequestParam(value="includeResults", defaultValue = "no") String includeResults){
         List<UserDto> userStatistics = null;
@@ -126,55 +125,52 @@ Die folgende Methode hat den RequestParam includeResults, welches einen defaultV
                 ? ResponseEntity.noContent().build()
                 : ResponseEntity.ok(userStatistics);
     }
-----
+```
 
 ### POST-Controller
 
 
-[source,Java]
-----
+
+```java
     @PostMapping({"/"})
     public HttpEntity<UserDto> createUser(@RequestBody UserMutateCommand userCreateMutateCommand){
         UserDto user = userService.createUser(userCreateMutateCommand);
         return ResponseEntity.ok().body(userDto);
     }
-----
+```
 
 ### DELETE-Controlller
 
 
-[source,Java]
-----
+
+```java
     @DeleteMapping({"/{id}"})
     public HttpEntity<UserDto> deleteUser(@PathVariable long id){
         userService.deleteUser(id)
         return ResponseEntity.ok().body(userDto);
     }
-----
+```
 
 
 ### PUT-Controller
 
 
 
-[source,Java]
-----
+```java
  @PutMapping("/{id}")
     public HttpEntity<UserDto> replaceUser(@Valid @PathVariable Long id,@RequestBody MutateUserCommand mutateUserCommand){
         return ResponseEntity.ok(new UserDto(userService.replaceUser(id,mutateUserCommand)));
     }
-
-----
+```
 
 ### PATCH-Controller
 
 
-[source,Java]
-----
+```java
  @PatchMapping({"id"})
     public HttpEntity<UserDto> partiallyUpdateBilling(@PathVariable long id, @Valid @RequestBody MutateUserCommand command) {
         return ResponseEntity.ok(new UserDto(userService.partiallyUpadte(id, command));
     }
-----
+```
 
 
